@@ -1,0 +1,242 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Bold, modern headers */
+  }
+  
+  p, span, div {
+    font-family: 'Lato', sans-serif; /* Clean body text */
+  }
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.profile {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main {
+    padding: 2rem;
+}
+
+#hero {
+    height: 545px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('selfcare.jpg') no-repeat center center/cover;
+    color:peru;
+    margin-top: 2px;
+}
+
+.hero-content {
+    max-width: 80%;
+}
+
+.hero-content h2 {
+    font-size: 2.2rem;
+    margin-top: 252px;
+    margin-left: 14px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-left: 12px;
+}
+
+.hero-content .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-left: 15px;
+    margin-top: 287px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#health-options {
+    
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.option {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    display: grid;
+    
+}
+.small{
+    display: flex;
+}
+
+.option h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.option p {
+    font-size: 35px;
+    color: #666;
+}
+
+.option-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: block;
+    margin-top: 1rem;
+    height: 25px;
+    width: 125px;
+    margin-left: 625px;
+}
+
+#blog {
+    margin: 2rem 0;
+}
+
+#blog h2 {
+    text-align: center;
+    color: #333;
+}
+
+.blog-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.blog-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.blog-card h4 {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.blog-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.blog-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: block;
+    margin-top: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* align-items:[_{{{CITATION{{{_1{](https://github.com/buribalazs/smooth-drag-order/tree/7b40d21d076c3e31765f61481f537beaf4c5ec9f/README.md)[_{{{CITATION{{{_2{](https://github.com/MuhammadHananAsghar/BirdFly---Chat-App-in-PHP/tree/1cf809e8141465c41fb8e04ba53de93ac6d2e5fa/BirdFly%2Fheader.php)[_{{{CITATION{{{_3{](https://github.com/itsabhijeetid/sms/tree/1f8d8871e6345c7b5686ab7a19e9abcbc216a23d/sms%2Flogin.php)[_{{{CITATION{{{_4{](https://github.com/DaleCooper59/CI_Jarditou/tree/5e513c01de527e8abe9af8b58bf944e4b3d87137/application%2Fviews%2FconnexionClient_view.php)[_{{{CITATION{{{_5{](https://github.com/front-end-foundations/session7-work/tree/792a2deacebb03f902b32d78164bb9650d9d3393/README.md)[_{{{CITATION{{{_6{](https://github.com/etmacalinao/etmacalinao.github.io/tree/79ee645c9cab9841a9d0b84f1f6f564c0843de19/index.md)[_{{{CITATION{{{_7{](https://github.com/wahidung/laravel-blog/tree/d7f6890749a6d0a11b8bfae645f5601d03071aa4/resources%2Fviews%2Fpages%2Fdetail.blade.php)[_{{{CITATION{{{_8{](https://github.com/tituswater/rotarac1/tree/08f539d93c42e23f398a36b8020908ab59220e24/resources%2Fviews%2Fpages%2Fwelcome.blade.php)[_{{{CITATION{{{_9{](https://github.com/je-rajesh/appio.me/tree/8f744c8441d753a9933423d63ba50436aead6be9/OLD%2Fgrablorweb%2Fresources%2Fviews%2Fform%2Fhome.blade.php)[_{{{CITATION{{{_10{](https://github.com/nsamardzic13/Exter/tree/e47ab570ee0e885de2d8fe043546f85e2199cf01/resources%2Fviews%2Ffooter.blade.php)[_{{{CITATION{{{_11{](https://github.com/edwardcruzcruz/DAW/tree/7d10c8998d2136dff09b9783102d31fedc33d34e/resources%2Fviews%2Fpages%2FsolicitudesClient.blade.php)[_{{{CITATION{{{_12{](https://github.com/ibongba/hairnate/tree/ce72cdc971ae860d366c98cf1d4f4a9807c5d8ad/barber%2FupdateSevice.php)[_{{{CITATION{{{_13{](https://github.com/sarthi42/Doctor-Portal/tree/d35c5baa34f05d3101d979ae83bf5e8a7c939ab9/Doc-apointment-sys%2Fprofile.php)[_{{{CITATION{{{_14{](https://github.com/lashka12/Travelo-Website/tree/48034500ebd76ca2eabdcd20eae49a1d1a47fded/Travelo%2FSystem%2Findex.php) */
+}
