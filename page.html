@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BalancePath</title>
     <!-- Google Font links -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
@@ -13,12 +17,12 @@
 <body>
     <header>
         <div class="logo">
-            <h1>BalancePath</h1>
+            <h1><span><img src="logo.png" alt="logo" style="height: 120px; width: 120px ;">CareMate</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#Track">Track Your Health</a></li>
-                <li><a href="#appoint">Appoint a Consultant & doctor</a></li>
+                <li><a href="appointments.html">Appoint a Consultant & doctor</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -29,21 +33,79 @@
     </header>
 
     <!-- Profile Modal -->
-    <div id="profileModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>User Profile</h2>
-            <p>Login or create an account to access personalized features.</p>
+     <!-- Profile Modal -->
+        <!-- ...existing code... -->
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>User Profile</h2>
+                <div id="loginForm">
+                    <h3>Login</h3>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button id="loginBtn">Login</button>
+                </div>
+                <div id="healthDataForm" style="display:none;">
+                    <h3>Health Data</h3>
+                    <input type="text" id="age" placeholder="Age" required>
+                    <input type="text" id="bloodGroup" placeholder="Blood Group" required>
+                    <input type="text" id="gender" placeholder="Gender" required>
+                    <input type="text" id="majorHealthIssue" placeholder="Major Health Issue" required>
+                    <input type="text" id="height" placeholder="Height" required>
+                    <input type="text" id="weight" placeholder="Weight" required>
+                    <button id="submitHealthDataBtn">Submit</button>
+                </div>
+                <div id="profileData" style="display:none;">
+                    <h3>Profile Data</h3>
+                    <p id="profileUsername"></p>
+                    <p id="profileAge"></p>
+                    <p id="profileBloodGroup"></p>
+                    <p id="profileGender"></p>
+                    <p id="profileMajorHealthIssue"></p>
+                    <p id="profileHeight"></p>
+                    <p id="profileWeight"></p>
+                </div>
+            </div>
         </div>
+        <!-- ...existing code... -->
+    
     </div>
 
     <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h2>Building a Better You</h2>
+        <section id="hero" style="width: 100%;">
+            <div class="hero-content" style="width: 100%;">
+                    <!-- <p>Your text above the carousel</p> -->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img id="imo"  class="d-block w-100" src="Selfcare.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="social (1).jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="mental.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- <h2>Building a Better You</h2>
                 <p>Explore resources and connect with others</p>
                     <p> to live a balanced and healthy life.</p>
-                <a href="#personal-health" class="btn">Get Started</a>
+                <a href="#personal-health" class="btn">Get Started</a> -->
             </div>
             
         </section>
@@ -52,12 +114,12 @@
             <div class="option">
                 <h3>Personal Health</h3>
                 <div class="small">
-                    <!-- <img src="physical.jpeg" alt="Personal Health" style="width: 655px;height: 354px;"  > -->
+                    <img src="physical.jpeg" alt="Personal Health" style="width: 655px;height: 354px;"  >
     
                     <p>Identify and understand common health issues, explore wellness tips, and maintain a balanced lifestyle.</p>
                     </div>
                     <div class="buttons">
-                    <a href="#personal-health" class="option-btn">Solution</a>
+                    <a href="Health Management/index.html" class="option-btn">Solution</a>
                     
                 </div>
             </div>
@@ -69,13 +131,13 @@
                     <p>Understand prevalent mental health issues, learn coping strategies, and find professional resources.</p>
                 </div>
                 <div class="buttons">
-                    <a href="#mental-health" class="option-btn">Solution</a>
+                    <a href="solution2x.html" class="option-btn">Solution</a>
                     
                 </div>
             </div>
             <div class="option">
                 <h3>Social Health</h3>
-                <div class="small"><img src="social.webp" alt="Social Health" style="width: 655px;height: 354px;">
+                <div class="small"><img src="social (1).jpg" alt="Social Health" style="width: 655px;height: 354px;">
                     <p>Connect with the community, enhance social skills, and engage in social activities for a healthier life.</p></div>
                 <div class="buttons">
                     <a href="#social-health" class="option-btn">Solution</a>

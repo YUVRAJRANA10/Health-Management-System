@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Diseases & Their Cures</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #ffffff, #e0f7fa);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #00695c;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Flexbox Layout for Diseases */
+        .diseases {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .section {
+            width: 22%;
+            background: #ffccbc;
+            padding: 25px;
+            margin: 10px 0;
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section:hover {
+            background: #ffab91;
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h2 {
+            color: #d84315;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            color: #555;
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .button {
+            flex: 1;
+            padding: 12px 25px;
+            background: #00695c;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .button:hover {
+            background: #004d40;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            animation: fadeInModal 0.5s ease;
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: zoomIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.7); }
+            to { transform: scale(1); }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Common Physical Diseases & Their Cures</h1>
+
+        <div class="diseases">
+
+            <!-- Headache -->
+            <div class="section">
+                <h2>Headache</h2>
+                <div class="image-container">
+                    <img src="headache.jpg" alt="Headache">
+                </div>
+                <p><strong>Causes:</strong> Stress, dehydration, tension.</p>
+                <p><strong>Cure:</strong> Rest, hydration, medication, stress management.
+                    <br> Common Medicines: Acetaminophen, Ibuprofen,Combiflame,Paracetamol, Aspirin.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video1')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+            <!-- Migraines -->
+            <div class="section">
+                <h2>Migraines</h2>
+                <div class="image-container">
+                    <img src="migrain.jpg" alt="Migraines">
+                </div>
+                <p><strong>Causes:</strong> Stress, lack of sleep, dietary triggers.</p>
+                <p><strong>Cure:</strong> Adequate sleep, hydration, avoiding triggers, medication.
+                    <br> Common Medicines: Triptans, NSAIDs.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video2')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+            <!-- Back Pain -->
+            <div class="section">
+                <h2>Back Pain</h2>
+                <div class="image-container">
+                    <img src="backpain.jpg" alt="Back Pain">
+                </div>
+                <p><strong>Causes:</strong> Poor posture, muscle strain, injury.</p>
+                <p><strong>Cure:</strong> Regular stretching, ergonomic seating, physiotherapy.
+                    <br> Common Medicines: Ibuprofen, Acetaminophen, Muscle Relaxants.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video3')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+            <!-- Arthritis -->
+            <div class="section">
+                <h2>Arthritis</h2>
+                <div class="image-container">
+                    <img src="arithritis.jpg" alt="Arthritis">
+                </div>
+                <p><strong>Causes:</strong> Inflammation of joints, aging, genetics.</p>
+                <p><strong>Cure:</strong> Anti-inflammatory diet, exercise, medication, physiotherapy.
+                    <br> Common Medicines: NSAIDs, Disease-modifying anti-rheumatic.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video4')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+            <!-- Obesity -->
+            <div class="section">
+                <h2>Obesity</h2>
+                <div class="image-container">
+                    <img src="obesity.jpg" alt="Obesity">
+                </div>
+                <p><strong>Causes:</strong> Poor diet, lack of exercise, genetics.</p>
+                <p><strong>Cure:</strong> Balanced diet, regular exercise, medical consultation.
+                    <br> Common Medicines: Orlistat, Phentermine.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video5')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+            <!-- Stomachache -->
+            <div class="section">
+                <h2>Stomachache</h2>
+                <div class="image-container">
+                    <img src="stomach.jpg" alt="Stomachache">
+                </div>
+                <p><strong>Causes:</strong> Indigestion, infection, gas, constipation.</p>
+                <p><strong>Cure:</strong> Adequate hydration, balanced diet, medication.
+                    <br> Common Medicines: Antacids, Loperamide.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video6')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+            <!-- Cough -->
+            <div class="section">
+                <h2>Cough</h2>
+                <div class="image-container">
+                    <img src="cough.jpg" alt="Cough">
+                </div>
+                <p><strong>Causes:</strong> Infection, allergies, environmental factors.</p>
+                <p><strong>Cure:</strong> Cough syrups, humidifiers, rest.
+                    <br> Common Medicines: Dextromethorphan,Hriask,Chestoncold, Codeine.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video7')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+            <!-- Fever -->
+            <div class="section">
+                <h2>Fever</h2>
+                <div class="image-container">
+                    <img src="fever.jpg" alt="Fever">
+                </div>
+                <p><strong>Causes:</strong> Infections, inflammation, body temperature imbalance.</p>
+                <p><strong>Cure:</strong> Hydration, fever-reducing medication, rest.
+                    <br> Common Medicines: Paracetamol, Ibuprofen.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video8')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+            <!-- High Blood Pressure -->
+            <div class="section">
+                <h2>High Blood Pressure</h2>
+                <div class="image-container">
+                    <img src="highbloodpressure.jpg" alt="High Blood Pressure">
+                </div>
+                <p><strong>Causes:</strong> Stress, genetics, excessive salt intake.</p>
+                <p><strong>Cure:</strong> Healthy diet, exercise, medication.
+                    <br> Common Medicines: ACE inhibitors, Diuretics.
+                </p>
+                <div class="button-container">
+                    <button class="button" onclick="openModal('video9')">Watch Treatment Video</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modals for Videos -->
+        <!-- Modal for Headache Video -->
+        <div id="video1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video1')">&times;</span>
+                <h2>Headache Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-eGQ5RyKGZE?si=TZE9LZ3tLrDvQy8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for Migraines Video -->
+        <div id="video2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video2')">&times;</span>
+                <h2>Migraines Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3C8N-bCfeg0?si=l3GsiR1qlvgU1WAv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for Back Pain Video -->
+        <div id="video3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video3')">&times;</span>
+                <h2>Back Pain Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gjeBUnlHI3c?si=94vE1Ky_n507fgvW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for Arthritis Video -->
+        <div id="video4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video4')">&times;</span>
+                <h2>Arthritis Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/IDNhz061xgA?si=M__J-wKaVYR0vA_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for Obesity Video -->
+        <div id="video5" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video5')">&times;</span>
+                <h2>Obesity Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Kc-Xf_T7ctA?si=n0kmO7uF82E5-roI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for Stomachache Video -->
+        <div id="video6" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video6')">&times;</span>
+                <h2>Stomachache Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/E5nmXuq-2-I?si=SW65GRiCnVWZAy5S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for Cough Video -->
+        <div id="video7" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video7')">&times;</span>
+                <h2>Cough Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OELbFuQEUf0?si=ckhe2EyqixzJ-dsn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for Fever Video -->
+        <div id="video8" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video8')">&times;</span>
+                <h2>Fever Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/codQBTfknn8?si=Qb9rYdUsedxoT1P5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for High Blood Pressure Video -->
+        <div id="video9" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video9')">&times;</span>
+                <h2>High Blood Pressure Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3oQ6q66_xvE?si=-J6u1SU5NyiTzzrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function openModal(videoId) {
+            document.getElementById(videoId).style.display = "block";
+        }
+
+        function closeModal(videoId) {
+            document.getElementById(videoId).style.display = "none";
+        }
+    </script>
+</body>
+</html>

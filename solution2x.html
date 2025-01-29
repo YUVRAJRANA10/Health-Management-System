@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Diseases & Their Treatments</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #b3e5fc, #e1bee7);
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #6a1b9a;
+            font-size: 2.8em;
+        }
+        .diseases {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .section {
+            width: 30%;
+            background: #ffe0b2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            background: #ffcc80;
+            transform: scale(1.05);
+        }
+        .section h2 {
+            color: #d84315;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #6a1b9a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #4a148c;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            margin: 10% auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            width: 70%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Common Mental Diseases & Their Treatments</h1>
+        <div class="diseases">
+            <div class="section">
+                <h2>Depression</h2>
+                <p>Causes: Stress, trauma, genetics.</p>
+                <p>Treatment: Therapy, medication, lifestyle changes.</p>
+                <button class="button" onclick="openModal('video1')">Watch Treatment Video</button>
+            </div>
+            <div class="section">
+                <h2>Anxiety</h2>
+                <p>Causes: Stress, chemical imbalances, environment.</p>
+                <p>Treatment: Meditation, breathing exercises, medication.</p>
+                <button class="button" onclick="openModal('video2')">Watch Treatment Video</button>
+            </div>
+            <div class="section">
+                <h2>Insomnia</h2>
+                <p>Causes: Stress, anxiety, poor sleep habits.</p>
+                <p>Treatment: Good sleep hygiene, relaxation techniques, medication.</p>
+                <button class="button" onclick="openModal('video3')">Watch Treatment Video</button>
+            </div>
+            <div class="section">
+                <h2>Bipolar Disorder</h2>
+                <p>Causes: Genetic factors, brain structure.</p>
+                <p>Treatment: Mood stabilizers, therapy, lifestyle management.</p>
+                <button class="button" onclick="openModal('video4')">Watch Treatment Video</button>
+            </div>
+            <div class="section">
+                <h2>Schizophrenia</h2>
+                <p>Causes: Genetics, brain chemistry, environment.</p>
+                <p>Treatment: Antipsychotic medication, therapy.</p>
+                <button class="button" onclick="openModal('video5')">Watch Treatment Video</button>
+            </div>
+            <div class="section">
+                <h2>OCD</h2>
+                <p>Causes: Genetics, brain function.</p>
+                <p>Treatment: CBT, medication.</p>
+                <button class="button" onclick="openModal('video6')">Watch Treatment Video</button>
+            </div>
+            <div class="section">
+                <h2>PTSD</h2>
+                <p>Causes: Trauma, extreme stress.</p>
+                <p>Treatment: Therapy, medication.</p>
+                <button class="button" onclick="openModal('video7')">Watch Treatment Video</button>
+            </div>
+            <div class="section">
+                <h2>ADHD</h2>
+                <p>Causes: Genetics, brain structure.</p>
+                <p>Treatment: Therapy, medication, routine management.</p>
+                <button class="button" onclick="openModal('video8')">Watch Treatment Video</button>
+            </div>
+        </div>
+
+        <div id="video1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video1')">&times;</span>
+                <h2>Depression Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/blwV6rnvDk8?si=A4vR4-Y6zpDRiAnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        <div id="video2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video2')">&times;</span>
+                <h2>Anxiety Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/QLjPrNe63kk?si=CmyDaAScU9te3WAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        <div id="video3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video3')">&times;</span>
+                <h2>Insomnia Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vdc8JonEax8?si=UgixO65W1W6vqJ8-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+     
+        <div id="video4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video4')">&times;</span>
+                <h2>Bipolar Disorder Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/KSvk8LLBo2g?si=zJUNwJt17R0b6K5-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        
+        <div id="video5" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video5')">&times;</span>
+                <h2> OCD Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Kc-Xf_T7ctA?si=n0kmO7uF82E5-roI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="video6" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video6')">&times;</span>
+                <h2>OCD Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/yXMhExEUHdM?si=5Z14GzuSlQayNIfv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="video7" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video7')">&times;</span>
+                <h2>PTSD Treatment Video</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/mZPAL59nafo?si=slslfRC5GFf9wDxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+      
+        <div id="video8" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('video8')">&times;</span>
+                <h2> ADHD Treatment Video</h2>
+                
+            </div>
+        </div><iframe width="560" height="315" src="https://www.youtube.com/embed/I7QGn1Ri9cg?si=AxpcZSbEComeECXy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+</body>
+</html>

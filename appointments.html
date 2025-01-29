@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appoint a Doctor</title>
+    
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    background: url('doctorr.jpeg') no-repeat center center/cover;
+    
+}
+
+
+#container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* margin-left: 54px; */
+    margin-right: 700px;
+    align-items:start;
+    justify-self: left;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+</style>
+<body>
+    <div id="container">
+        <h1>Appoint a Doctor</h1>
+        <div id="step1">
+            <label for="problem-type">Which problem do you have?</label>
+            <select id="problem-type" onchange="showNextStep()">
+                <option value="">Select</option>
+                <option value="physical">Physical</option>
+                <option value="mental">Mental</option>
+                <option value="social">Social</option>
+            </select>
+        </div>
+        <div id="step2" style="display:none;">
+            <label for="physical-problem">Where is the problem in your body?</label>
+            <select id="physical-problem">
+                <option value="">Select</option>
+                <option value="headache">Headache</option>
+                <option value="backpain">Back Pain</option>
+                <option value="stomachache">Stomach Ache</option>
+            </select>
+            <label for="physical-details">Describe your physical problem:</label>
+            <textarea id="physical-details" placeholder="Describe your issue..."></textarea>
+        </div>
+        <div id="step3" style="display:none;">
+            <label for="mental-details">Describe your mental problem:</label>
+            <textarea id="mental-details" placeholder="Describe your issue..."></textarea>
+        </div>
+        <div id="step4" style="display:none;">
+            <label for="social-details">Describe your social problem:</label>
+            <textarea id="social-details" placeholder="Describe your issue..."></textarea>
+        </div>
+        <button id="appoint-btn" style="display:none;" onclick="appointDoctor()">Appoint a Doctor</button>
+    </div>
+    <script > 
+        function showNextStep() {
+    const problemType = document.getElementById('problem-type').value;
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const step4 = document.getElementById('step4');
+    const appointBtn = document.getElementById('appoint-btn');
+
+    step2.style.display = 'none';
+    step3.style.display = 'none';
+    step4.style.display = 'none';
+    appointBtn.style.display = 'none';
+
+    if (problemType === 'physical') {
+        step2.style.display = 'block';
+        appointBtn.style.display = 'block';
+    } else if (problemType === 'mental') {
+        step3.style.display = 'block';
+        appointBtn.style.display = 'block';
+    } else if (problemType === 'social') {
+        step4.style.display = 'block';
+        appointBtn.style.display = 'block';
+    }
+}
+
+function appointDoctor() {
+    alert('Doctor appointed successfully!');
+}
+
+    </script>
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6799f476825083258e0ceed6/1iiom5s30';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+</body>
+</html>
